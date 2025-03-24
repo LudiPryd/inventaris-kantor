@@ -33,7 +33,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-briefcase"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Inventaris Kantor</div>
             </a>
@@ -44,11 +44,11 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="{{route('goods.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-box"></i>
                     <span>Barang</span>
                 </a>
                 <a class="nav-link" href="{{route('tracks.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-map-marker-alt"></i>
                     <span>Kelola Barang</span>
                 </a>
             </li>
@@ -189,7 +189,6 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>

@@ -39,14 +39,11 @@ class GoodsController extends Controller
             'tgl_pembelian'     => 'required|date',
         ]);
 
-        if($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/goods', $imageName);
-        }
+        $image = $request->file('image');
+        $image->storeAs('goods', $image->hashName());
         
         Goods::create([
-            'image'           => $imageName,
+            'image'           => $image->hashName(),
             'nama_barang'     => $request->nama_barang,
             'kategori'        => $request->kategori,
             'tgl_pembelian'   => $request->tgl_pembelian
@@ -91,10 +88,10 @@ class GoodsController extends Controller
         $goods = Goods::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            Storage::delete('goods/'.$goods->image);
+            Storage::delete('public/goods/'.$goods->image);
 
             $image = $request->file('image');
-            $image->storeAs('goods', $image->hashName());
+            $image->storeAs('public/goods', $image->hashName());
 
             $goods->update([
                 'image'           => $image->hashName(),
@@ -120,7 +117,7 @@ class GoodsController extends Controller
     {
         $goods = Goods::findOrFail($id);
 
-        Storage::delete('goods/'.$goods->image);
+        Storage::delete('public/goods/'.$goods->image);
 
         $goods->delete();
 

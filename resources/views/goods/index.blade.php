@@ -26,7 +26,8 @@
                         @forelse ($goods as $item)                           
                         <tr>
                             <td class="text-center">
-                                <img src="{{ asset('/storage/goods/'.$item->image) }}" class="rounded" style="width: 150px">
+                                <img src="{{ asset('storage/goods/'.$item->image) }}" class="rounded" style="width: 150px">
+                                {{-- <img src="{{ Storage::url('goods/' .$item->image) }}" class="rounded" style="width: 150px"> --}}
                             </td>
                             <td>{{$item->nama_barang}}</td>
                             <td>{{$item->kategori}}</td>
